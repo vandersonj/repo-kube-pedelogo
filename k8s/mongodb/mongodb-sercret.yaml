@@ -1,0 +1,14 @@
+apiVersion: v1 
+kind: Secret 
+metadata:
+  name: mongodb-secret
+type: Opaque
+data: 
+  MONGO_INITDB_ROOT_USERNAME: bW9uZ291c2Vy
+  MONGO_INITDB_ROOT_PASSWORD: bW9uZ29wd2Q=
+
+# comando para gerar cripto base64 
+#- # echo -n "mongouser" | base64 -> Saida -> bW9uZ291c2Vy
+
+#- # echo -n "mongopwd" | base64 -> Saida -> bW9uZ29wd2Q=
+
