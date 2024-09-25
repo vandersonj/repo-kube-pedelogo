@@ -13,7 +13,7 @@ spec:
     spec:
       containers:
         - name: api
-          image: vandersonj/pedelogo-cataogo:v1.0.0
+          image: registry.digitalocean.com/vander/pedelogo-cataogo
           ports: 
           - containerPort: 80
             name: http
@@ -26,14 +26,16 @@ spec:
           env:
           - name: Mongo__User
             valueFrom: 
-              configMapKeyRef:
+              secretKeyRef:
                 key: MONGO_INITDB_ROOT_USERNAME
-                name: mongodb-configmap
+                name: mongodb-secret
           - name: Mongo__Password
             valueFrom: 
-              configMapKeyRef:
+              secretKeyRef:
                 key: MONGO_INITDB_ROOT_PASSWORD
-                name: mongodb-configmap
+                name: mongodb-secret
+      imagePullSecrets:
+        - name: digital-registry     
 
 
 
